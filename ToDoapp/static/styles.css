@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap');
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+    background: rgb(0,208,255);
+    background: linear-gradient(90deg, rgba(0,208,255,1) 0%, rgba(0,209,251,1) 30%, rgba(0,198,255,1) 58%, rgba(0,255,234,1) 100%);
+	background-size: 400%, 400%;
+	background-position: 100%;
+	animation: gradient 10s infinite;
+	height: 100vh;
+    display: flex;
+    flex-direction: column;
+	
+}
+
+@keyframes gradient{
+	0%{
+		background-position: 0%;
+	}
+	50%{
+		background-position: 100%;
+	}
+
+	100%{
+		background-position: 200%
+	}
+}
+
+#title{
+	color: white;
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+	font-size: 4rem;
+    letter-spacing: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.bootstrap-iso{
+    background: rgb(0,208,255);
+    background: linear-gradient(90deg, rgba(0,208,255,1) 0%, rgba(0,209,251,1) 30%, rgba(0,198,255,1) 58%, rgba(0,255,234,1) 100%);
+	background-size: 400%, 400%;
+	background-position: 100%;
+	animation: gradient 10s infinite;
+    height: 100vh;
+    width: 100%;
+}
+
+.container-fluid{
+    font-family: Raleway, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+#form-group2{
+    margin-top:1rem;
+    margin-bottom: 1rem;
+}
+
+td, th{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border: 3.5px solid #efefef;
+    color: #efefef;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    font-size:1.25rem;
+}
+
+table{
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px){
+    #title{
+        letter-spacing: 1.5rem;
+        font-size: 3rem;
+    }
+
+    td, th{
+    font-weight: 900;
+    font-size:1rem;
+    }
+}
