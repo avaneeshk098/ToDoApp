@@ -17,3 +17,8 @@ def index(request):
         return HttpResponseRedirect('/')
     return render(request, 'index.html', {'todoItems': todoItems})
 
+def delete(request):
+    if request.is_ajax:
+        value = request.POST.get("id")
+        ToDoItem.objects.get(pk=value).delete()
+    return HttpResponse('/')

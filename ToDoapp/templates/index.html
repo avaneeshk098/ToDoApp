@@ -34,16 +34,17 @@
          </div>    
         </div>
 </form>
+
 <table>
     <tr>
         <th>Task</th>
         <th>Deadline</th>
     </tr>
     {% for i in todoItems %}
-    <tr>
+    <tr id="{{ i.id }}">
         <th>{{ i.task }}</th>
         <td>{{ i.deadline }}</td>
-        <td><button class="btn btn-danger" name="submit" type="submit">Delete</button></td>
+        <td><button class="btn btn-danger" name="{{ i.id }}" type="submit">Delete</button></td>
     </tr>
     {% endfor %}
 </table>
