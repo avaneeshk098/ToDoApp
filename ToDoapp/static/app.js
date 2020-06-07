@@ -31,3 +31,26 @@ $(document).ready(function () {
         });
     });
 });
+
+$(document).ready(function () {
+    $("table tr td input[type='button']").click(function () {
+       // gets the td for which button was clicked
+        var $td = $(this).closest("input[type='button']"); 
+        // gets the selected Attraction for that particular td
+        var name_id = $td.attr("name");
+        console.log(name_id);
+        var csrftoken = Cookies.get('csrftoken');
+        $.ajax({
+            type: 'POST',
+            url: 'complete/',
+            headers:{
+                'X-CSRFToken': csrftoken
+            },
+            data: {"id":name_id},
+            cache: true,
+            success: function(){
+                alert("Task Completed Successfully")
+            }
+        });
+    });
+});

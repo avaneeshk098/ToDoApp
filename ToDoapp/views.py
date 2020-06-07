@@ -10,8 +10,10 @@ def index(request):
         item = ToDoItem()
         task = request.POST.get("task")
         date_string = request.POST.get("datetimepicker1")
+        complete = request.POST.get("completed")
         date = datetime.strptime(date_string, "%m-%d-%Y").date()
         item.task = task
+        item.completed = complete
         item.deadline = date
         item.save()      
         return HttpResponseRedirect('/')
@@ -21,4 +23,12 @@ def delete(request):
     if request.is_ajax:
         value = request.POST.get("id")
         ToDoItem.objects.get(pk=value).delete()
+    return HttpResponse('/')
+
+def complete(request):
+    if request.is_ajax:
+        value = request.POST.get("id")
+        item = ToDoItem.objects.get(pk=value)
+        item.completed = True
+        item.save()
     return HttpResponse('/')

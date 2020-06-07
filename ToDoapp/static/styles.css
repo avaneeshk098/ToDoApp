@@ -7,7 +7,7 @@
 
 body{
     background: rgb(0,208,255);
-    background: linear-gradient(90deg, rgba(0,208,255,1) 0%, rgba(0,209,251,1) 30%, rgba(0,198,255,1) 58%, rgba(0,255,234,1) 100%);
+    background: linear-gradient(90deg, rgba(0,208,255,1) 0%, rgba(0,209,251,1) 30%, rgba(0,198,255,1) 58%, #00d6cb 100%);
 	background-size: 400%, 400%;
 	background-position: 100%;
 	animation: gradient 10s infinite;
@@ -89,7 +89,7 @@ table{
     }
 
     td, th{
-    font-weight: 900;
-    font-size:1rem;
+        font-weight: 900;
+        font-size:1rem;
     }
 }

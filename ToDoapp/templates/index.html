@@ -1,10 +1,8 @@
 {% extends 'layout.html' %}
 {% load static %}
-{% block head %}
-  <title>To-Do List App</title>
-{% endblock %}
+{% block title %}Goals List{% endblock %}
 {% block body %}
-<h1 id="title">To-Do List</h1>
+<h1 id="title">Goals List</h1>
 <div class="bootstrap-iso">
     <div class="container-fluid">
         <div class="row">
@@ -25,6 +23,7 @@
                         </div>
                     </div>
                 </div>
+                <input type="hidden" value="False" checked="checked" name="completed" id="completed"/>
              <div class="form-group"> <!-- Submit button -->
                     <button class="btn btn-primary " name="submit" type="submit">Submit</button>
              </div>
@@ -42,9 +41,17 @@
     </tr>
     {% for i in todoItems %}
     <tr id="{{ i.id }}">
-        <th>{{ i.task }}</th>
-        <td>{{ i.deadline }}</td>
-        <td><button class="btn btn-danger" name="{{ i.id }}" type="submit">Delete</button></td>
+        {% if i.completed %}
+            <th style="color:forestgreen">{{ i.task }}</th>
+            <td>{{ i.deadline }}</td>
+            <td><button class="btn btn-danger delete" name="{{ i.id }}" type="submit">Delete</button></td>
+            <td><input class="btn btn-success complete" name="{{ i.id }}" type="button" value="Completed"/></td>
+        {% else %}
+            <th style="color:crimson">{{ i.task }}</th>
+            <td>{{ i.deadline }}</td>
+            <td><button class="btn btn-danger delete" name="{{ i.id }}" type="submit">Delete</button></td>
+            <td><input class="btn btn-success complete" name="{{ i.id }}" type="button" value="Completed"/></td>
+        {% endif %}
     </tr>
     {% endfor %}
 </table>
