@@ -49,7 +49,7 @@ $(document).ready(function () {
             data: {"id":name_id},
             cache: true,
             success: function(){
-                alert("Task Completed Successfully")
+               location.reload(true)
             }
         });
     });
